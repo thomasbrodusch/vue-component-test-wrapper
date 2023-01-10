@@ -1,0 +1,75 @@
+{
+  "name": "vue-component-test-wrapper",
+  "version": "0.1.0",
+  "description": "A wrapper for Vue Components that allows testing of lifecycle events and component instances with vue",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "rollup -c",
+    "lint": "yarn eslint .",
+    "test": "vitest -c vitest.config.ts --run",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasbrodusch/vue-component-test-wrapper.git"
+  },
+  "keywords": [
+    "vue",
+    "wrapper",
+    "component",
+    "test-utils",
+    "testing",
+    "utility"
+  ],
+  "author": "Thomas Brodusch",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/thomasbrodusch/vue-component-test-wrapper/issues"
+  },
+  "homepage": "https://github.com/thomasbrodusch/vue-component-test-wrapper#readme",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@commitlint/cli": "^17.4.1",
+    "@commitlint/config-conventional": "^17.4.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/compiler-sfc": "^3.2.45",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.8.0",
+    "happy-dom": "^8.1.3",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.2",
+    "rollup": "^3.9.1",
+    "rollup-plugin-dts": "^5.1.1",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4",
+    "vitest": "^0.27.0",
+    "vitest-fail-on-console": "^0.2.4",
+    "vue-eslint-parser": "^9.1.0"
+  },
+  "dependencies": {
+    "@vue/test-utils": "^2.2.7",
+    "vue": "^3.2.45"
+  }
+}
